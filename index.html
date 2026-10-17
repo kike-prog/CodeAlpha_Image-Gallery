@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMINA — Stories Worth Seeing | Curated Visual Journey</title>
+  <meta name="description" content="Explore a curated collection of moments, places, people, and perspectives with Lumina. An editorial visual photography showcase.">
+  
+  <!-- Modern Editorial & Display Fonts (Cinzel / Plus Jakarta Sans / Playfair Display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Reading / Scroll Progress Bar Indicator -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Ambient Light Backdrops -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+
+  <!-- Minimal Floating Navigation Bar -->
+  <header class="floating-nav" id="mainNav">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="Lumina Home">
+        <span class="logo-symbol">◆</span>
+        <span class="logo-text">LUMINA</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="nav-links" id="navMenu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#collections" class="nav-link">Collections</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Theme" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-content">
+      <nav class="drawer-nav">
+        <a href="#hero" class="drawer-link">Home</a>
+        <a href="#gallery" class="drawer-link">Gallery</a>
+        <a href="#collections" class="drawer-link">Collections</a>
+        <a href="#about" class="drawer-link">About</a>
+      </nav>
+      <div class="drawer-footer">
+        <p class="drawer-tagline">"Stories worth seeing."</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Section 1: Cinematic Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-media-wrapper">
+        <img 
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=85" 
+          alt="Lumina Hero Artwork" 
+          class="hero-bg-img"
+          id="heroBgImg"
+        />
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge reveal-elem">
+          <span class="badge-dot"></span>
+          <span>Curated Photography Edition Vol. IV</span>
+        </div>
+        <h1 class="hero-title reveal-elem">
+          <span class="hero-brand">LUMINA</span>
+          <span class="hero-tagline">Stories worth seeing<span class="accent-period">.</span></span>
+        </h1>
+        <p class="hero-description reveal-elem">
+          Explore a curated collection of moments, places, people, and perspectives — captured through the lens of visionary global artists.
+        </p>
+        <div class="hero-cta-wrapper reveal-elem">
+          <a href="#gallery" class="btn-hero-explore" id="heroExploreBtn">
+            <span>Explore Gallery</span>
+            <i class="fa-solid fa-arrow-down-long"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Editorial Gallery & Categories -->
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal-elem">
+          <div class="header-pre">The Portfolio</div>
+          <h2 class="section-title">Visual Narratives</h2>
+          <p class="section-subtitle">Every frame holds a rhythm, an atmosphere, an unspoken tale.</p>
+        </div>
+
+        <!-- Elegant Category Filter Navigation -->
+        <div class="filter-wrapper reveal-elem">
+          <div class="category-filters" id="categoryFilters" role="tablist" aria-label="Filter Artworks">
+            <button class="filter-tab active" data-category="all" role="tab" aria-selected="true">
+              <span>All Works</span>
+              <span class="tab-count" id="countAll">12</span>
+            </button>
+            <button class="filter-tab" data-category="nature" role="tab" aria-selected="false">
+              <span>Nature</span>
+              <span class="tab-count">3</span>
+            </button>
+            <button class="filter-tab" data-category="architecture" role="tab" aria-selected="false">
+              <span>Architecture</span>
+              <span class="tab-count">2</span>
+            </button>
+            <button class="filter-tab" data-category="people" role="tab" aria-selected="false">
+              <span>People</span>
+              <span class="tab-count">2</span>
+            </button>
+            <button class="filter-tab" data-category="travel" role="tab" aria-selected="false">
+              <span>Travel</span>
+              <span class="tab-count">3</span>
+            </button>
+            <button class="filter-tab" data-category="abstract" role="tab" aria-selected="false">
+              <span>Abstract</span>
+              <span class="tab-count">2</span>
+            </button>
+          </div>
+
+          <!-- Search & Filter Controls -->
+          <div class="gallery-quick-tools">
+            <div class="search-input-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="gallerySearchInput" placeholder="Search titles, cities, artists..." aria-label="Search gallery">
+              <button id="clearSearch" class="btn-clear-search" aria-label="Clear Search"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="fx-dropdown">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <select id="imageFxSelect" aria-label="Select visual filter effect">
+                <option value="none">Original Vision</option>
+                <option value="monochrome">Monochrome Film</option>
+                <option value="vintage">Vintage Warmth</option>
+                <option value="cyber">Cyberpunk Dusk</option>
+                <option value="dramatic">High Contrast</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial Asymmetrical / Masonry Gallery Grid -->
+        <div class="editorial-gallery-grid" id="editorialGrid">
+          <!-- Dynamically Rendered via JS with editorial layout classes -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-gallery-state" id="emptyState" style="display: none;">
+          <div class="empty-icon-wrap"><i class="fa-regular fa-compass"></i></div>
+          <h3>No Perspectives Found</h3>
+          <p>We couldn't find any artwork matching your criteria. Try resetting filters.</p>
+          <button class="btn-editorial-reset" id="resetFilters">Show All Artworks</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Featured Collections -->
+    <section class="collections-section" id="collections">
+      <div class="container">
+        <div class="section-header reveal-elem">
+          <div class="header-pre">Curated Anthologies</div>
+          <h2 class="section-title">Featured Collections</h2>
+          <p class="section-subtitle">Deep dive into thematic visual stories captured across continents.</p>
+        </div>
+
+        <div class="collections-grid reveal-elem">
+          <!-- Collection 1 -->
+          <div class="collection-card" data-filter="travel">
+            <div class="collection-media">
+              <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=80" alt="Wander Collection" loading="lazy">
+              <div class="collection-gradient"></div>
+            </div>
+            <div class="collection-info">
+              <span class="collection-count">12 Artworks</span>
+              <h3 class="collection-title">WANDER</h3>
+              <p class="collection-quote">"Places that make you stop, breathe, and gaze into eternity."</p>
+              <span class="collection-explore-btn">Explore Anthology <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Collection 2 -->
+          <div class="collection-card" data-filter="nature">
+            <div class="collection-media">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80" alt="Solitude Collection" loading="lazy">
+              <div class="collection-gradient"></div>
+            </div>
+            <div class="collection-info">
+              <span class="collection-count">09 Artworks</span>
+              <h3 class="collection-title">SOLITUDE</h3>
+              <p class="collection-quote">"The quiet power of untouched landscapes and misty alpine silence."</p>
+              <span class="collection-explore-btn">Explore Anthology <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Collection 3 -->
+          <div class="collection-card" data-filter="architecture">
+            <div class="collection-media">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Geometry Collection" loading="lazy">
+              <div class="collection-gradient"></div>
+            </div>
+            <div class="collection-info">
+              <span class="collection-count">15 Artworks</span>
+              <h3 class="collection-title">STRUCTURE</h3>
+              <p class="collection-quote">"Human ambition sculpted into concrete, glass, and soaring steel."</p>
+              <span class="collection-explore-btn">Explore Anthology <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: About / Editorial Statement -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-card-editorial reveal-elem">
+          <div class="about-quote-mark">“</div>
+          <div class="about-inner">
+            <h2 class="about-heading">The Philosophy of Seeing</h2>
+            <p class="about-text">
+              Photography is more than pixels and grain — it is a testament to presence. LUMINA was founded on the belief that every fleeting shadow, sunlit horizon, and human expression deserves an intentional stage. We curate work that speaks quietly yet stays endlessly.
+            </p>
+            <div class="about-meta-row">
+              <div class="about-author">
+                <strong>Curatorial Board</strong>
+                <span>LUMINA International Arts</span>
+              </div>
+              <div class="about-stats-pills">
+                <span class="pill"><strong>12+</strong> Global Exhibitions</span>
+                <span class="pill"><strong>4K</strong> Ultra-Res Masters</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Fullscreen Lightbox Experience -->
+  <div class="editorial-lightbox" id="lightboxModal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    
+    <div class="lightbox-shell">
+      <!-- Top Bar -->
+      <div class="lightbox-top-bar">
+        <div class="lightbox-index-badge">
+          <span id="lbCurrentIndex">01</span> <span class="index-sep">/</span> <span id="lbTotalCount">12</span>
+        </div>
+
+        <div class="lightbox-controls-right">
+          <button class="lb-action-btn" id="lbSlideshowBtn" title="Play Slideshow (Spacebar)" aria-label="Play slideshow">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button class="lb-action-btn" id="lbFavoriteBtn" title="Favorite Artwork (L)" aria-label="Favorite artwork">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <button class="lb-action-btn" id="lbZoomBtn" title="Toggle Zoom (Z)" aria-label="Zoom image">
+            <i class="fa-solid fa-magnifying-glass-plus"></i>
+          </button>
+          <button class="lb-action-btn" id="lbFullscreenBtn" title="Fullscreen (F)" aria-label="Fullscreen">
+            <i class="fa-solid fa-expand"></i>
+          </button>
+          <button class="lb-action-btn lb-close-btn" id="lbCloseBtn" title="Close (Esc)" aria-label="Close lightbox">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Stage -->
+      <div class="lightbox-main-stage">
+        <button class="lb-arrow-btn lb-prev" id="lbPrevBtn" title="Previous (←)" aria-label="Previous image">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="lightbox-view-frame" id="lbViewFrame">
+          <div class="lb-skeleton" id="lbSkeleton">
+            <div class="pulse-loader"></div>
+          </div>
+          <img src="" alt="" id="lbActiveImage" class="lb-active-img">
+        </div>
+
+        <button class="lb-arrow-btn lb-next" id="lbNextBtn" title="Next (→)" aria-label="Next image">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- Bottom Metadata & Storytelling Panel -->
+      <div class="lightbox-bottom-panel">
+        <div class="lb-info-block">
+          <div class="lb-tag-row">
+            <span class="lb-category-tag" id="lbCategory">Nature • Landscape</span>
+            <span class="lb-location-tag" id="lbLocation"><i class="fa-solid fa-location-dot"></i> Swiss Alps</span>
+            <span class="lb-timestamp-tag" id="lbTimestamp"><i class="fa-regular fa-clock"></i> Captured at 6:42 PM</span>
+          </div>
+          <h3 class="lb-artwork-title" id="lbTitle">Misty Alpine Peaks</h3>
+          <p class="lb-artwork-desc" id="lbDescription">Breathtaking morning mist descending over jagged snow-capped alpine mountains.</p>
+          <div class="lb-artist-meta">
+            <span>Artist: <strong id="lbPhotographer">Elena Vance</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thumbnails Carousel Strip -->
+      <div class="lightbox-thumbs-wrapper">
+        <div class="lightbox-thumbs-track" id="lbThumbsTrack">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sophisticated Footer -->
+  <footer class="editorial-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <span class="logo-symbol">◆</span>
+            <span class="logo-text">LUMINA</span>
+          </div>
+          <p class="footer-tagline">"Stories worth seeing."</p>
+          <p class="footer-mission">
+            A celebration of high-fidelity visual storytelling, minimal aesthetics, and timeless photography.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#collections">Featured Collections</a></li>
+            <li><a href="#about">Curatorial Philosophy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Social Showcase</h4>
+          <ul class="social-links-list">
+            <li><a href="https://instagram.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://behance.net" target="_blank" rel="noreferrer"><i class="fa-brands fa-behance"></i> Behance</a></li>
+            <li><a href="https://pinterest.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-pinterest"></i> Pinterest</a></li>
+            <li><a href="https://unsplash.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-unsplash"></i> Unsplash Edition</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 Lumina. Crafted with HTML5, Vanilla CSS & Modern JavaScript.</p>
+        <div class="footer-key-shortcuts">
+          <span><kbd>←</kbd> <kbd>→</kbd> Navigate Lightbox</span>
+          <span><kbd>Space</kbd> Slideshow</span>
+          <span><kbd>Esc</kbd> Close</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Effortless Back to Top Floating Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top" title="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
